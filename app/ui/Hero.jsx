@@ -9,8 +9,10 @@ export default function Hero() {
             Welcome to HugNext
           </h1>
           <p className="mt-3 max-w-md mx-auto text-base text-muted-foreground sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Discover amazing features and services that will revolutionize your
-            experience.
+            Harness the power of Next.js and Hugging Face. Explore a suite of
+            AI-driven tools and services to enhance your web development
+            capabilities. Discover cutting-edge features and services tailored
+            to your needs.
           </p>
           <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
