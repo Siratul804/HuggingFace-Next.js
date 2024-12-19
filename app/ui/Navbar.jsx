@@ -24,6 +24,16 @@ export default function Navbar() {
               HugText
             </Link>
             <Link
+              href="/LagHug"
+              className={
+                pathname === "/LagHug"
+                  ? "text-primary"
+                  : "text-muted-foreground "
+              }
+            >
+              LagHug
+            </Link>
+            <Link
               href="/HugImg"
               className={
                 pathname === "/HugImg"
