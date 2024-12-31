@@ -69,13 +69,9 @@ export default function LagHug() {
       <div className="flex items-center justify-center flex-col h-screen bg-white">
         <div className="text-center py-4 ">
           <h1 className="text-lg pb-2 ">
-            <span className="font-bold">QwQ-32B</span> LLM Model
+            <span className="font-bold">LangChain & HuggingFace</span>
           </h1>
-          <p className="text-sm">
-            QwQ-32B-Preview is an experimental research model developed by the{" "}
-            <br />
-            Qwen Team, focused on advancing AI reasoning capabilities.
-          </p>
+          <p className="text-sm">Testing With Langchain & Huggingface</p>
         </div>
         <Card className="w-full max-w-md">
           <CardContent className="p-6">

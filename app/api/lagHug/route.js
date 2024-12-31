@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
-// import { HfInference } from "@huggingface/inference";
 
-// import { HuggingFaceInference } from "langchain/llms/hf";
-
-// import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
+import { HuggingFaceInference } from "@langchain/community/llms/hf";
 
 export async function POST(req) {
   try {
@@ -21,36 +18,16 @@ export async function POST(req) {
 
     console.log("Received query:", message);
 
-    // const client = new HfInference(process.env.HUGGINGFACEHUB_API_TOKEN);
+    const model = new HuggingFaceInference({
+      model: "Qwen/QwQ-32B-Preview",
+      apiKey: process.env.HUGGINGFACEHUB_API_TOKEN,
+    });
 
-    // const chatCompletion = await client.chatCompletion({
-    //   model: "mistralai/Mistral-Nemo-Instruct-2407",
-    //   messages: [
-    //     {
-    //       role: "user",
-    //       content: message,
-    //     },
-    //   ],
-    //   max_tokens: 500,
-    // });
+    const res = await model.invoke("1 + 1 =");
+    console.log({ res });
 
-    // console.log(chatCompletion.choices[0].message.content);
-
-    // const model = new HuggingFaceInference({
-    //   model: "mistralai/Mistral-Nemo-Instruct-2407",
-    //   apiKey: process.env.HUGGINGFACEHUB_API_TOKEN, // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
-    // });
-
-    // const res = await model.invoke("1 + 1 =");
-    // console.log({ res });
-
-    // const embeddings = new HuggingFaceInferenceEmbeddings({
-    //   apiKey: process.env.HUGGINGFACEHUB_API_TOKEN, // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
-    // });
-
-    // Return the response as JSON
     return NextResponse.json({
-      data: message,
+      data: res,
     });
   } catch (err) {
     console.error("Error :", err);
